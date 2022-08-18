@@ -26,6 +26,10 @@ class MenuBar:
 
     def Load(self):
         dir = os.getcwd() + "\\sets"
+
+        if not os.path.isdir(dir):
+            os.mkdir(dir)
+
         fileName = askopenfilename(title= "Select Set", initialdir= dir, filetypes=[("Json Files", "*.json")])
         if fileName != '':
             self.study.logic.loadSet(fileName)

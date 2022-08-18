@@ -12,6 +12,10 @@ class Logic:
         #print(repr(text))
 
         dir = os.getcwd() + "\\sets"
+
+        if not os.path.isdir(dir):
+            os.mkdir(dir)
+
         saveTo = asksaveasfilename(title= "Enter Set Name", initialdir= dir, filetypes=[("Json Files", "*.json")])
         if saveTo != '':
 
